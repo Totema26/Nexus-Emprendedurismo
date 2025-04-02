@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -8,6 +7,7 @@ import {
   SheetContent,
   SheetTrigger
 } from "@/components/ui/sheet";
+import { ThemeToggle } from "./ThemeToggle";
 
 const categories = [
   { name: "Programación", path: "/category/programming" },
@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="container flex items-center justify-between py-4">
         <div className="flex items-center gap-6">
           <Link to="/" className="text-2xl font-bold text-primary">
-            CursoHive
+            Nexus
           </Link>
           
           <nav className="hidden md:flex items-center space-x-6">
@@ -46,6 +46,7 @@ const Navbar = () => {
               className="pl-8 h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             />
           </div>
+          <ThemeToggle />
           <Button variant="outline" size="icon">
             <ShoppingCart className="h-5 w-5" />
           </Button>
@@ -79,6 +80,9 @@ const Navbar = () => {
                 ))}
               </nav>
               <div className="flex flex-col gap-2 mt-4">
+                <div className="flex justify-center">
+                  <ThemeToggle />
+                </div>
                 <Button variant="outline">
                   <ShoppingCart className="h-5 w-5 mr-2" />
                   Carrito

@@ -1,6 +1,5 @@
-
-import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -24,11 +23,25 @@ import Footer from "@/components/Footer";
 import CourseCard from "@/components/CourseCard";
 import { courses } from "@/data/coursesData";
 
+const categoryNames: { [key: string]: string } = {
+  programming: "Programación",
+  design: "Diseño",
+  marketing: "Marketing",
+  business: "Negocios"
+};
+
 const CoursesPage = () => {
+  const { category } = useParams();
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(category || null);
   const [priceRange, setPriceRange] = useState([0, 300]);
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
+  
+  useEffect(() => {
+    if (category) {
+      setSelectedCategory(category);
+    }
+  }, [category]);
   
   // Filter courses based on search, category, price, and level
   const filteredCourses = courses.filter((course) => {
@@ -63,9 +76,13 @@ const CoursesPage = () => {
       
       <div className="bg-primary/5 py-8 border-b">
         <div className="container">
-          <h1 className="text-3xl font-bold mb-2">Explora nuestros cursos</h1>
+          <h1 className="text-3xl font-bold mb-2">
+            {category ? `Cursos de ${categoryNames[category]}` : "Explora nuestros cursos"}
+          </h1>
           <p className="text-muted-foreground">
-            Descubre una amplia variedad de cursos de alta calidad impartidos por expertos
+            {category 
+              ? `Descubre nuestra selección de cursos de ${categoryNames[category]}`
+              : "Descubre una amplia variedad de cursos de alta calidad impartidos por expertos"}
           </p>
         </div>
       </div>
