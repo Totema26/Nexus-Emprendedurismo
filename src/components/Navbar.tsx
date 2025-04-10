@@ -9,6 +9,11 @@ import {
 } from "@/components/ui/sheet";
 import { ThemeToggle } from "./ThemeToggle";
 
+const menuItems = [
+  { name: "Crear Empresa", path: "/crear-empresa" },
+  { name: "Cursos y Guías", path: "/cursos-y-guias" },
+];
+
 const categories = [
   { name: "Programación", path: "/category/programming" },
   { name: "Diseño", path: "/category/design" },
@@ -26,6 +31,15 @@ const Navbar = () => {
           </Link>
           
           <nav className="hidden md:flex items-center space-x-6">
+            {menuItems.map((item) => (
+              <Link 
+                key={item.path}
+                to={item.path}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {item.name}
+              </Link>
+            ))}
             {categories.map((category) => (
               <Link 
                 key={category.path}
@@ -69,6 +83,15 @@ const Navbar = () => {
                 />
               </div>
               <nav className="flex flex-col space-y-3">
+                {menuItems.map((item) => (
+                  <Link 
+                    key={item.path}
+                    to={item.path}
+                    className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
                 {categories.map((category) => (
                   <Link 
                     key={category.path}

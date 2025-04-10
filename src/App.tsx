@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,6 +7,9 @@ import Index from "./pages/Index";
 import CoursesPage from "./pages/CoursesPage";
 import CoursePage from "./pages/CoursePage";
 import NotFound from "./pages/NotFound";
+import CrearEmpresa from "./pages/CrearEmpresa";
+import CrearEAS from "./pages/CrearEAS";
+import Cursos from "./pages/Cursos";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +24,12 @@ const App = () => (
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/courses/:id" element={<CoursePage />} />
           <Route path="/category/:category" element={<CoursesPage />} />
+          
+          {/* Nuevas rutas para creación de empresas */}
+          <Route path="/crear-empresa" element={<CrearEmpresa />} />
+          <Route path="/crear-empresa/eas" element={<CrearEAS />} />
+          <Route path="/cursos-y-guias" element={<Cursos />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

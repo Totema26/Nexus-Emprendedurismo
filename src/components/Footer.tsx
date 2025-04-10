@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container py-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">CursoHive</h3>
+            <h3 className="text-lg font-semibold mb-4">Nexus</h3>
             <p className="text-sm text-muted-foreground">
               La plataforma líder para aprender habilidades en línea con cursos de calidad premium.
             </p>
@@ -80,7 +80,7 @@ const Footer = () => {
         
         <div className="border-t mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} CursoHive. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Nexus. Todos los derechos reservados.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
