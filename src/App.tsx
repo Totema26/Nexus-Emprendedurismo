@@ -9,6 +9,7 @@ import CoursePage from "./pages/CoursePage";
 import NotFound from "./pages/NotFound";
 import CrearEmpresa from "./pages/CrearEmpresa";
 import CrearEAS from "./pages/CrearEAS";
+import CrearSociedad from "./pages/CrearSociedad";
 import Cursos from "./pages/Cursos";
 
 const queryClient = new QueryClient();
@@ -25,9 +26,11 @@ const App = () => (
           <Route path="/courses/:id" element={<CoursePage />} />
           <Route path="/category/:category" element={<CoursesPage />} />
           
-          {/* Nuevas rutas para creación de empresas */}
+          {/* Rutas para creación de empresas */}
           <Route path="/crear-empresa" element={<CrearEmpresa />} />
           <Route path="/crear-empresa/eas" element={<CrearEAS />} />
+          <Route path="/crear-empresa/srl" element={<CrearSociedad />} />
+          <Route path="/crear-empresa/sa" element={<CrearSociedad />} />
           <Route path="/cursos-y-guias" element={<Cursos />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
