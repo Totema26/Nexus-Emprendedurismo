@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Building2, Briefcase, Store, Factory } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -32,10 +33,18 @@ const Hero = () => {
             
             <div className="flex items-center gap-4 text-sm text-muted-foreground pt-2">
               <div className="flex -space-x-2">
-                <img src="https://i.pravatar.cc/150?img=1" alt="Usuario" className="w-8 h-8 rounded-full border-2 border-background" />
-                <img src="https://i.pravatar.cc/150?img=2" alt="Usuario" className="w-8 h-8 rounded-full border-2 border-background" />
-                <img src="https://i.pravatar.cc/150?img=3" alt="Usuario" className="w-8 h-8 rounded-full border-2 border-background" />
-                <img src="https://i.pravatar.cc/150?img=4" alt="Usuario" className="w-8 h-8 rounded-full border-2 border-background" />
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center border-2 border-background">
+                  <Building2 className="h-4 w-4 text-primary" />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center border-2 border-background">
+                  <Briefcase className="h-4 w-4 text-primary" />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center border-2 border-background">
+                  <Store className="h-4 w-4 text-primary" />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center border-2 border-background">
+                  <Factory className="h-4 w-4 text-primary" />
+                </div>
               </div>
               <p>Más de <span className="font-semibold">1,000</span> empresas constituidas exitosamente</p>
             </div>
