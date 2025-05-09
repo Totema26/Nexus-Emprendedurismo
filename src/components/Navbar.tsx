@@ -55,9 +55,17 @@ const Navbar = () => {
         </Sheet>
 
         <div className="flex w-full items-center gap-4 md:gap-6">
-          <Link to="/" className="hidden md:flex items-center gap-2">
-            <img src="/logo.svg" alt="Nexus Logo" className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold">Nexus</span>
+          <Link to="/" className="hidden md:flex items-center space-x-2">
+            <img 
+              src="/NEXUS negro-2.png" 
+              alt="Nexus Logo" 
+              className="h-8 dark:hidden" 
+            />
+            <img 
+              src="/NEXUS blanco.png" 
+              alt="Nexus Logo" 
+              className="h-8 hidden dark:block" 
+            />
           </Link>
 
           <div className="hidden md:flex gap-4">
@@ -134,7 +142,7 @@ const Navbar = () => {
                   </div>
                   <div className="space-y-4">
                     <p className="text-sm text-muted-foreground">
-                      Por solo Gs. 200.000 al mes, obtén todas las herramientas necesarias para gestionar tu empresa de manera eficiente y profesional.
+                      Por solo 20$ al mes, obtén todas las herramientas necesarias para gestionar tu empresa de manera eficiente y profesional.
                     </p>
                     <Button className="w-full">Obtener Plan Premium</Button>
                   </div>
