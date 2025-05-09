@@ -87,29 +87,22 @@ const DynamicSections = () => {
                   ${index === activeSection ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
               >
                 <div className="flex flex-col">
-                  <div className="w-full flex justify-center mb-16">
+                  <div className="text-left space-y-16">
                     <div 
-                      className={`transition-all duration-700 transform -translate-y-20
-                        ${animationPhase >= 0 
-                          ? 'opacity-100 translate-x-0 scale-100' 
-                          : 'opacity-0 translate-x-8 scale-75'}`}
-                    >
-                      <div className={`w-32 h-32 rounded-full ${section.color}
-                        flex items-center justify-center transition-transform duration-700
-                        shadow-lg shadow-${section.color}/20`}
-                      >
-                        <section.icon className="w-16 h-16 text-white" strokeWidth={1.5} />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="text-left">
-                    <div 
-                      className={`transition-all duration-700 delay-200 transform mb-16 -mt-12
+                      className={`transition-all duration-700 delay-200 transform
                         ${animationPhase >= 1 
                           ? 'opacity-100 translate-y-0' 
                           : 'opacity-0 translate-y-8'}`}
                     >
+                      <div className="mb-8">
+                        <div className={`w-32 h-32 rounded-full ${section.color}
+                          flex items-center justify-center transition-transform duration-700
+                          shadow-lg shadow-${section.color}/20`}
+                        >
+                          <section.icon className="w-16 h-16 text-white" strokeWidth={1.5} />
+                        </div>
+                      </div>
+
                       <h2 className="text-8xl font-bold text-white tracking-tight mb-4">
                         {section.title}
                       </h2>
@@ -119,7 +112,7 @@ const DynamicSections = () => {
                     </div>
 
                     <div 
-                      className={`transition-all duration-700 delay-400 transform -mt-4
+                      className={`transition-all duration-700 delay-400 transform
                         ${animationPhase >= 2 
                           ? 'opacity-100 translate-y-0' 
                           : 'opacity-0 translate-y-8'}`}
